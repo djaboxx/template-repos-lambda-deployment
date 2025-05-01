@@ -15,7 +15,7 @@ provider "aws" {
 module "template_automation" {
   source = "../terraform-aws-template-automation"
 
-  name_prefix = "${var.namespace}-${var.environment}-${var.stage}"
+  name_prefix = "dummy-test-"
   
   github_api_url = "https://api.github.com"
   github_org_name = "HappyPathway"
@@ -36,7 +36,7 @@ module "template_automation" {
     environment_variables = {
       LOG_LEVEL = "INFO"
     }
-    image_uri = "123456789012.dkr.ecr.us-west-2.amazonaws.com/template-automation-lambda:latest"
+    image_uri = "public.ecr.aws/h1g9x7n8/template-automation-lambda:0.23.0"
   }
 
   tags = var.tags
